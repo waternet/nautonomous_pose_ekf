@@ -6,7 +6,6 @@ from nav_msgs.msg import Odometry
 
 class OdomEKF():
     def __init__(self):
-        # Give the node a name
         rospy.init_node('odom_ekf', anonymous=False)
 
         # Publisher of type nav_msgs/Odometry
