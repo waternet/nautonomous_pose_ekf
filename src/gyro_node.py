@@ -86,9 +86,12 @@ class GYRO_Class(object):
 
 					imu_msg.header = h
 
-					imu_msg.orientation_covariance = (1., )*9	
-					imu_msg.angular_velocity_covariance = (1., )*9
-					imu_msg.linear_acceleration_covariance = (1., )*9
+					#imu_msg.orientation_covariance = (1., )*9	
+        				imu_msg.orientation_covariance = [1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-6]
+					#imu_msg.angular_velocity_covariance = (1., )*9
+        				imu_msg.angular_velocity_covariance = [1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e6]
+					#imu_msg.linear_acceleration_covariance = (1., )*9
+        				imu_msg.linear_acceleration_covariance = [-1,0,0,0,0,0,0,0,0]
 
 					imu_msg.orientation.x = self._qx
 					#imu_msg.orientation.x = 0
