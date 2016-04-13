@@ -47,7 +47,7 @@ class GYRO_Class(object):
         	self.cal_buffer_length = 1000
         	self.imu_data = Imu(header=rospy.Header(frame_id="IMU_link"))
         	self.imu_data.orientation_covariance = [1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-6]
-	        self.imu_data.angular_velocity_covariance = [1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e-6]
+	        self.imu_data.angular_velocity_covariance = [1e6, 0, 0, 0, 1e6, 0, 0, 0, 1e6]
         	self.imu_data.linear_acceleration_covariance = [-1,0,0,0,0,0,0,0,0]
         	self.imu_pub = rospy.Publisher('imu_data', Imu,queue_size = 10)
 
