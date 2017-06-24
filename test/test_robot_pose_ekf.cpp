@@ -118,8 +118,8 @@ protected:
 
   void SetUp()
   {
-    ROS_INFO("Subscribing to robot_pose_ekf/odom_combined");
-    ekf_sub_ = node_.subscribe("/robot_pose_ekf/odom_combined", 10, &TestEKF::EKFCallback, (TestEKF*)this);
+    ROS_INFO("Subscribing to nautonomous_pose_ekf/odom_combined");
+    ekf_sub_ = node_.subscribe("/nautonomous_pose_ekf/odom_combined", 10, &TestEKF::EKFCallback, (TestEKF*)this);
 
     ROS_INFO("Subscribing to base_odometry/odom");
     odom_sub_ = node_.subscribe("base_odometry/odom", 10 , &TestEKF::OdomCallback, (TestEKF*)this);

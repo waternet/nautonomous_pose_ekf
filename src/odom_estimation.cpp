@@ -34,7 +34,7 @@
 
 /* Author: Wim Meeussen */
 
-#include <robot_pose_ekf/odom_estimation.h>
+#include <nautonomous_pose_ekf/odom_estimation.h>
 
 using namespace MatrixWrapper;
 using namespace BFL;

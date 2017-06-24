@@ -85,8 +85,8 @@ protected:
 
 TEST_F(TestEKF, test)
 {
-  ROS_INFO("Subscribing to robot_pose_ekf/odom_combined");
-  ekf_sub_ = node_.subscribe("/robot_pose_ekf/odom_combined", 10, &TestEKF::EKFCallback, (TestEKF*)this);
+  ROS_INFO("Subscribing to nautonomous_pose_ekf/odom_combined");
+  ekf_sub_ = node_.subscribe("/nautonomous_pose_ekf/odom_combined", 10, &TestEKF::EKFCallback, (TestEKF*)this);
 
   // wait for 20 seconds
   ROS_INFO("Waiting for 20 seconds while bag is playing");

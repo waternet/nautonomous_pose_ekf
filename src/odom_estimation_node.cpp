@@ -34,7 +34,7 @@
 
 /* Author: Wim Meeussen */
 
-#include <robot_pose_ekf/odom_estimation_node.h>
+#include <nautonomous_pose_ekf/odom_estimation_node.h>
 
 
 using namespace MatrixWrapper;
@@ -469,7 +469,7 @@ namespace estimation
   };
 
 
-bool OdomEstimationNode::getStatus(robot_pose_ekf::GetStatus::Request& req, robot_pose_ekf::GetStatus::Response& resp)
+bool OdomEstimationNode::getStatus(nautonomous_pose_ekf::GetStatus::Request& req, nautonomous_pose_ekf::GetStatus::Response& resp)
 {
   stringstream ss;
   ss << "Input:" << endl;
@@ -516,7 +516,7 @@ using namespace estimation;
 int main(int argc, char **argv)
 {
   // Initialize ROS
-  ros::init(argc, argv, "robot_pose_ekf");
+  ros::init(argc, argv, "nautonomous_pose_ekf");
 
   // create filter class
   OdomEstimationNode my_filter_node;

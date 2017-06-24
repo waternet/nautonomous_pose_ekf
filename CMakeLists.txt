@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(robot_pose_ekf)
+project(nautonomous_pose_ekf)
 
 # bfl (Bayesian Filtering Library) is a third party package that uses pkg-config
 find_package(PkgConfig)
@@ -44,25 +44,25 @@ include_directories(
     ${Boost_INCLUDE_DIRS}
     )
 
-add_executable(robot_pose_ekf 
+add_executable(nautonomous_pose_ekf 
                        src/odom_estimation.cpp 
                        src/nonlinearanalyticconditionalgaussianodo.cpp 
                        src/odom_estimation_node.cpp)
-target_link_libraries(robot_pose_ekf
+target_link_libraries(nautonomous_pose_ekf
     ${catkin_LIBRARIES}
     ${Boost_LIBRARIES}
     ${BFL_LIBRARIES}
     )
-add_dependencies(robot_pose_ekf robot_pose_ekf_gencpp)
+add_dependencies(nautonomous_pose_ekf nautonomous_pose_ekf_gencpp)
 
 install(
     TARGETS
-        robot_pose_ekf
+        nautonomous_pose_ekf
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 install(
-    FILES robot_pose_ekf.launch example_with_gps.launch
+    FILES nautonomous_pose_ekf.launch example_with_gps.launch
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
@@ -78,7 +78,7 @@ if(CATKIN_ENABLE_TESTING)
 
 catkin_download_test_data(
   download_data_ekf_test2_indexed.bag
-  http://download.ros.org/data/robot_pose_ekf/ekf_test2_indexed.bag
+  http://download.ros.org/data/nautonomous_pose_ekf/ekf_test2_indexed.bag
   DESTINATION ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION}/test
   MD5 71addef0ed900e05b301e0b4fdca99e2
 )
