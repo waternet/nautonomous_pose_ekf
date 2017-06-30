@@ -18,12 +18,14 @@
         <param name="vo_used" value="false"/>
         <param name="utm_used" value="true"/>
  
-        <remap from="imu_topic" to="/sensor/imu/razor"/>
+        <remap from="imu_topic" to="$(arg imu_topic)"/>
         <!--remap from="vo_topic" to="/rtabmap/odom" /-->
-        <remap from="utm_odom_topic" to="/state/odom/utm" />
+        <remap from="utm_odom_topic" to="$(arg utm_odom_topic)" />
         <!--remap from="odom" to="/state/odom/utm" /-->
         <remap from="odom_combined_topic" to="$(arg odom_combined_topic)"/>
     </node>
+
+	<node pkg="rosbag" type="record" name="rosbag_pose_ekf" args="record -o $(arg rosbag_prefix_url)/pose/ekf $(arg imu_topic) $(arg utm_odom_topic) $(arg odom_combined_topic)" output="screen" if="$(arg rosbag_enabled)"/>
 
 </launch>
 
